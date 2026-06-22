@@ -116,10 +116,10 @@ img { max-width: 100%; display: block; }
 .section-hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: calc(var(--header-h) + 40px) 24px 60px; background: var(--bg-primary); position: relative; overflow: hidden; }
 .section-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 20% 30%, rgba(59,130,246,0.12) 0%, transparent 50%), radial-gradient(ellipse at 80% 70%, rgba(56,189,248,0.10) 0%, transparent 50%), radial-gradient(ellipse at 50% 100%, rgba(29,78,216,0.08) 0%, transparent 60%); opacity: 1; }
 .section-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,14,26,0.3) 0%, rgba(10,14,26,0.2) 50%, rgba(10,14,26,0.4) 100%); }
-.hero-grid { display: grid; grid-template-columns: 25fr 75fr; gap: 40px; align-items: center; max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+.hero-grid { display: grid; grid-template-columns: 40fr 60fr; gap: 40px; align-items: center; max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
 .hero-left { display: flex; flex-direction: column; align-items: center; justify-content: center; }
 .hero-photo { position: relative; }
-.hero-portrait { width: 300px; height: 380px; object-fit: cover; object-position: top center; border-radius: 16px; box-shadow: 0 20px 50px rgba(0,0,0,0.4), 0 0 30px rgba(59,130,246,0.15), 0 0 60px rgba(56,189,248,0.15), 0 0 90px rgba(29,78,216,0.10); transition: transform 0.3s; display: block; animation: portraitFloat 4s ease-in-out infinite; }
+.hero-portrait { width: 360px; height: 460px; object-fit: cover; object-position: center center; border-radius: 16px; box-shadow: 0 20px 50px rgba(0,0,0,0.4), 0 0 30px rgba(59,130,246,0.15), 0 0 60px rgba(56,189,248,0.15), 0 0 90px rgba(29,78,216,0.10); transition: transform 0.3s; display: block; animation: portraitFloat 4s ease-in-out infinite; }
 @keyframes portraitFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
 .hero-portrait:hover { animation: none; transform: scale(1.02); }
 .hero-right { display: flex; flex-direction: column; align-items: flex-start; text-align: left; padding-right: 40px; text-shadow: 0 2px 8px rgba(0,0,0,0.4); }
