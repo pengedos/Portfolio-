@@ -14,19 +14,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "John Eric Malonosan — Logistics & Supply Chain Developer",
-  description: "Portfolio of John Eric Malonosan: developer of Inventory Management PWA, Accounts Receivable Dashboard, and Freight Shipment Tracker.",
-  keywords: ["John Eric Malonosan", "logistics developer", "supply chain", "freight tracker", "inventory management", "portfolio"],
+  title: "John Eric Malonosan | Freight & Logistics Specialist",
+  description: "Freight & Logistics Specialist with 13+ years across multi-modal freight, carrier management, dispatch coordination, track & trace, and OTIF delivery across US, UK, AUS, and NZ markets. ISO 9001:2015 certified.",
+  keywords: ["John Eric Malonosan", "freight specialist", "logistics coordinator", "freight dispatcher", "track and trace", "carrier management", "OTIF delivery", "portfolio"],
   authors: [{ name: "John Eric Malonosan" }],
   openGraph: {
-    title: "John Eric Malonosan — Portfolio",
-    description: "Logistics & supply chain developer portfolio",
+    title: "John Eric Malonosan | Freight & Logistics Specialist",
+    description: "Freight & Logistics Specialist — 13+ years across multi-modal freight, carrier management, and OTIF delivery.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "John Eric Malonosan — Portfolio",
-    description: "Logistics & supply chain developer portfolio",
+    title: "John Eric Malonosan | Freight & Logistics Specialist",
+    description: "Freight & Logistics Specialist — 13+ years across multi-modal freight, carrier management, and OTIF delivery.",
   },
 };
 

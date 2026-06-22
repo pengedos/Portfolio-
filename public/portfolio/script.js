@@ -211,7 +211,13 @@ document.addEventListener('DOMContentLoaded', function() {
         var heroH1 = document.querySelector('.section-hero h1');
         if (heroH1) {
             var html = heroH1.innerHTML;
-            var wrapped = html.replace(/([^<>\s]+(?:\s+[^<>\s]+)*)/g, '<span class="hero-word">$1</span>');
+            // Split by HTML tags so tags like <br> are preserved, not wrapped as literal words
+            var wrapped = html.split(/(<[^>]+>)/).map(function(part) {
+                if (part.charAt(0) === '<' && part.charAt(part.length - 1) === '>') {
+                    return part;
+                }
+                return part.replace(/(\S+)/g, '<span class="hero-word">$1</span>');
+            }).join('');
             heroH1.innerHTML = wrapped;
             var words = heroH1.querySelectorAll('.hero-word');
             words.forEach(function(word, i) {
