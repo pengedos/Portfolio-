@@ -20,12 +20,36 @@
 }
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 16px); }
-body { font-family: var(--font-body); background: var(--bg-primary); color: var(--text-primary); line-height: 1.5; overflow-x: hidden; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 16px); background: var(--bg-primary); }
+body { font-family: var(--font-body); background: transparent; color: var(--text-primary); line-height: 1.5; overflow-x: hidden; }
 h1,h2,h3,h4 { font-family: var(--font-heading); font-weight: 700; }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 img { max-width: 100%; display: block; }
+
+/* ============================================================
+   ANIMATED BACKGROUND BLOBS (for glassmorphism)
+   ============================================================ */
+.bg-blobs { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.35; will-change: transform; }
+.blob-1 { width: 500px; height: 500px; background: radial-gradient(circle, #3B82F6, transparent 70%); top: -10%; left: -10%; animation: blobFloat1 28s ease-in-out infinite; }
+.blob-2 { width: 450px; height: 450px; background: radial-gradient(circle, #38BDF8, transparent 70%); top: 30%; right: -10%; animation: blobFloat2 32s ease-in-out infinite; }
+.blob-3 { width: 400px; height: 400px; background: radial-gradient(circle, #1D4ED8, transparent 70%); bottom: -10%; left: 20%; animation: blobFloat3 35s ease-in-out infinite; }
+.blob-4 { width: 380px; height: 380px; background: radial-gradient(circle, #60A5FA, transparent 70%); top: 60%; left: 40%; animation: blobFloat4 30s ease-in-out infinite; }
+
+@keyframes blobFloat1 { 0%,100% { transform: translate(0,0) scale(1); } 33% { transform: translate(120px,80px) scale(1.1); } 66% { transform: translate(60px,160px) scale(0.95); } }
+@keyframes blobFloat2 { 0%,100% { transform: translate(0,0) scale(1); } 33% { transform: translate(-100px,120px) scale(0.9); } 66% { transform: translate(-60px,-80px) scale(1.1); } }
+@keyframes blobFloat3 { 0%,100% { transform: translate(0,0) scale(1); } 33% { transform: translate(80px,-120px) scale(1.05); } 66% { transform: translate(-100px,-60px) scale(0.95); } }
+@keyframes blobFloat4 { 0%,100% { transform: translate(0,0) scale(1); } 33% { transform: translate(-80px,-100px) scale(1.1); } 66% { transform: translate(100px,60px) scale(0.9); } }
+
+/* Ensure content sits above blobs */
+.site-header, .sticky-logos, main, .site-footer { position: relative; z-index: 1; }
+
+@media (prefers-reduced-motion: reduce) { .blob { animation: none; } }
+@media (max-width: 768px) { .blob { filter: blur(60px); opacity: 0.25; } .blob-1, .blob-2 { width: 300px; height: 300px; } .blob-3, .blob-4 { width: 280px; height: 280px; } }
+
+
+
 
 .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
 
@@ -463,3 +487,43 @@ img { max-width: 100%; display: block; }
     .unified-step-metric-num { font-size: 1.5rem; }
     .automation-callout { flex-direction: column; text-align: center; gap: 12px; padding: 20px; }
 }
+
+/* ============================================================
+   GLASS CARD MIXIN — applied to all card surfaces
+   ============================================================ */
+.case-card, .tool-gallery-card, .platform-group, .timeline-content,
+.edu-card, .cert-card, .unified-step,
+.form-success, .case-filter-btn, .form-group input, .form-group textarea,
+.hero-metrics-inline {
+    background: rgba(20, 27, 45, 0.55);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
+/* Automation callout keeps its blue tint with glass */
+.automation-callout {
+    background: linear-gradient(135deg, rgba(59,130,246,0.18), rgba(56,189,248,0.12));
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
+@supports not (backdrop-filter: blur(14px)) {
+    .case-card, .tool-gallery-card, .platform-group, .timeline-content,
+    .edu-card, .cert-card, .unified-step, .automation-callout,
+    .form-success, .case-filter-btn, .form-group input, .form-group textarea,
+    .hero-metrics-inline {
+        background: var(--bg-card);
+    }
+}
+
+[data-theme="light"] .case-card, [data-theme="light"] .tool-gallery-card,
+[data-theme="light"] .platform-group, [data-theme="light"] .timeline-content,
+[data-theme="light"] .edu-card, [data-theme="light"] .cert-card,
+[data-theme="light"] .unified-step,
+[data-theme="light"] .form-success, [data-theme="light"] .case-filter-btn,
+[data-theme="light"] .form-group input, [data-theme="light"] .form-group textarea,
+[data-theme="light"] .hero-metrics-inline {
+    background: rgba(255, 255, 255, 0.65);
+}
+[data-theme="light"] .automation-callout {
+    background: linear-gradient(135deg, rgba(59,130,246,0.12), rgba(56,189,248,0.08));
+}
+[data-theme="light"] .blob { opacity: 0.18; }
