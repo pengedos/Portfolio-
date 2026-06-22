@@ -159,42 +159,6 @@ img { max-width: 100%; display: block; }
 .industry-stat-label { font-size: 0.72rem; color: var(--text-muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
 .industry-stat-divider { width: 1px; height: 40px; background: rgba(59,130,246,0.2); }
 
-/* INTENSIVE PROFILE */
-#intensive-profile { background: var(--bg-alt); }
-.intensive-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; max-width: 1200px; margin: 0 auto; }
-.intensive-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 20px; text-align: center; transition: all 0.3s; display: flex; flex-direction: column; align-items: center; }
-.intensive-card:hover { transform: translateY(-8px); border-color: var(--border-hover); box-shadow: 0 16px 40px rgba(0,0,0,0.3); }
-.intensive-icon { width: 100px; height: 100px; margin-bottom: 16px; }
-.intensive-icon svg { width: 100%; height: 100%; }
-.intensive-card h3 { font-size: 1.1rem; margin-bottom: 10px; font-weight: 700; color: var(--text-primary); }
-.intensive-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
-
-/* INTENSIVE ANIMATIONS */
-/* Logistics - Flowing packages */
-@keyframes flowPackage { 0%, 100% { opacity: 0.3; transform: translateY(0); } 50% { opacity: 1; transform: translateY(-5px); } }
-.logistics .package { animation: flowPackage 2s ease-in-out infinite; }
-.logistics .package:nth-child(2) { animation-delay: 0.3s; }
-.logistics .package:nth-child(3) { animation-delay: 0.6s; }
-
-/* Supply Chain - Node pulse */
-@keyframes nodePulse { 0%, 100% { transform: scale(1); opacity: 0.8; } 50% { transform: scale(1.2); opacity: 1; } }
-.supply-chain .node { animation: nodePulse 2s ease-in-out infinite; transform-origin: center; }
-
-/* PROCESS FLOW - CARD GRID */
-.process-cards-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
-.process-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; transition: all 0.3s; position: relative; overflow: hidden; }
-.process-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gradient-freight); opacity: 0; transition: opacity 0.3s; }
-.process-card:hover { border-color: var(--accent-freight); transform: translateY(-4px); box-shadow: 0 12px 32px rgba(59,130,246,0.15); }
-.process-card:hover::before { opacity: 1; }
-.process-card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
-.process-card-icon { width: 44px; height: 44px; border-radius: 10px; background: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(56,189,248,0.15)); color: var(--accent-freight); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
-.process-card-num { font-family: var(--font-heading); font-size: 0.7rem; font-weight: 800; color: var(--accent-freight); letter-spacing: 1px; }
-.process-card h4 { font-size: 1rem; margin-bottom: 8px; }
-.process-card-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px; }
-.process-card-metric { padding-top: 12px; border-top: 1px solid var(--border); }
-.process-card-metric-num { display: block; font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; background: var(--gradient-freight); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.process-card-metric-label { font-size: 0.68rem; color: var(--text-muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.3px; }
-
 /* BUTTONS */
 .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: var(--radius); font-weight: 600; font-size: 0.9rem; transition: all 0.3s; border: none; cursor: pointer; }
 .btn-primary { background: var(--gradient); color: #fff; }
@@ -203,26 +167,6 @@ img { max-width: 100%; display: block; }
 .btn-secondary:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
 .btn-full { width: 100%; justify-content: center; }
 .btn-lg { padding: 14px 28px; font-size: 0.95rem; }
-
-/* SERVICES */
-#services .container { max-width: 1100px; }
-.services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-.service-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; transition: all 0.3s; display: flex; flex-direction: column; }
-.service-card:hover { transform: translateY(-4px); border-color: var(--border-hover); box-shadow: 0 12px 32px rgba(0,0,0,0.2); }
-.service-card.slide-in { opacity: 0; transform: translateX(-20px); }
-.service-card.slide-in.visible { opacity: 1; transform: translateX(0); transition: opacity 0.6s ease, transform 0.6s ease; }
-.no-js .service-card.slide-in { opacity: 1; transform: none; }
-.service-card.slide-in.visible:nth-child(1) { transition-delay: 0s; }
-.service-card.slide-in.visible:nth-child(2) { transition-delay: 0.1s; }
-.service-card.slide-in.visible:nth-child(3) { transition-delay: 0.2s; }
-.service-card.slide-in.visible:nth-child(4) { transition-delay: 0.3s; }
-.service-icon { width: 56px; height: 56px; background: linear-gradient(135deg, rgba(56,189,248,0.15), rgba(123,47,252,0.15)); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
-.service-icon i { font-size: 1.4rem; color: var(--accent); }
-.service-card h3 { font-size: 1.05rem; margin-bottom: 12px; font-weight: 700; }
-.service-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px; flex: 1; }
-.service-features { display: flex; flex-direction: column; gap: 8px; }
-.service-features li { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--text-secondary); }
-.service-features i { color: var(--accent); font-size: 0.7rem; }
 
 /* CASE STUDIES */
 #case-studies .container { max-width: 1200px; }
