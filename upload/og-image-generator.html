@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { margin: 0; padding: 0; }
+        .og-container {
+            width: 1200px;
+            height: 630px;
+            background: linear-gradient(135deg, #0A0E1A 0%, #141B2D 100%);
+            font-family: Arial, sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+        .circle1 {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: rgba(0,212,255,0.03);
+            top: -200px;
+            left: -100px;
+        }
+        .circle2 {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: rgba(123,47,252,0.03);
+            bottom: -200px;
+            right: -100px;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+            padding: 80px;
+        }
+        .accent-line {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #00D4FF, #7B2FFC);
+            border-radius: 2px;
+            margin-bottom: 30px;
+        }
+        .name {
+            font-size: 52px;
+            font-weight: bold;
+            color: #FFFFFF;
+            margin-bottom: 10px;
+        }
+        .title {
+            font-size: 28px;
+            color: #00D4FF;
+            margin-bottom: 20px;
+        }
+        .subtitle {
+            font-size: 20px;
+            color: #94A3B8;
+            margin-bottom: 50px;
+        }
+        .metrics {
+            display: flex;
+            gap: 20px;
+        }
+        .metric {
+            width: 160px;
+            height: 80px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .metric-value {
+            font-size: 32px;
+            font-weight: bold;
+            color: #00D4FF;
+        }
+        .metric-label {
+            font-size: 12px;
+            color: #94A3B8;
+            text-transform: uppercase;
+        }
+        .url {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 16px;
+            color: #64748B;
+        }
+    </style>
+</head>
+<body>
+    <div class="og-container">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="content">
+            <div class="accent-line"></div>
+            <div class="name">John Eric Malonosan</div>
+            <div class="title">Freight Dispatcher & Logistics Coordinator</div>
+            <div class="subtitle">13+ years experience • DAT & Truckstop Expert • ISO 9001:2015</div>
+            <div class="metrics">
+                <div class="metric">
+                    <div class="metric-value">30%</div>
+                    <div class="metric-label">Fewer Delays</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">12x</div>
+                    <div class="metric-label">Faster Detection</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">99.9%</div>
+                    <div class="metric-label">System Uptime</div>
+                </div>
+            </div>
+        </div>
+        <div class="url">johnericmalonosan.com</div>
+    </div>
+</body>
+</html>
