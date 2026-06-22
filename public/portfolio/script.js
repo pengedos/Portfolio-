@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         }, { threshold: 0.1 });
-        document.querySelectorAll('.cases-grid, .tools-gallery-grid, .services-grid, .process-cards-grid').forEach(function(el) { staggerObserver.observe(el); });
+        document.querySelectorAll('.cases-grid, .tools-gallery-grid, .unified-process').forEach(function(el) { staggerObserver.observe(el); });
     }
 
     // 2. HERO TEXT REVEAL

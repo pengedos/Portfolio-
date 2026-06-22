@@ -426,3 +426,62 @@ img { max-width: 100%; display: block; }
 /* Light theme: hero title stays solid for legibility; underline accent adapts */
 [data-theme="light"] .hero-right h1 { color: var(--text-primary); text-shadow: none; }
 [data-theme="light"] .hero-right h1::after { box-shadow: 0 2px 8px rgba(56,189,248,0.2); }
+
+/* ============================================================
+   UNIFIED PROCESS SECTION — merged Intensive Profile + How I Work + Services
+   ============================================================ */
+
+/* Multi-modal strip (Supply Chain competency) */
+.modal-strip { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 40px; }
+.modal-pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 16px; border-radius: 50px; font-size: 0.78rem; font-weight: 600; color: var(--accent); border: 1px solid rgba(56,189,248,0.3); background: rgba(56,189,248,0.06); }
+.modal-pill i { font-size: 0.72rem; }
+
+/* Unified process container */
+.unified-process { display: flex; flex-direction: column; gap: 16px; max-width: 900px; margin: 0 auto; }
+
+/* Each step = horizontal card: [num] [body] [metric] */
+.unified-step { display: grid; grid-template-columns: 64px 1fr auto; gap: 24px; align-items: center; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px 28px; transition: all 0.3s; }
+.unified-step:hover { transform: translateX(4px); border-color: var(--border-hover); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+
+/* Step number (large gradient) */
+.unified-step-num { font-family: var(--font-heading); font-size: 2.4rem; font-weight: 800; line-height: 1; background: linear-gradient(135deg, #3B82F6 0%, #38BDF8 50%, #1D4ED8 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; opacity: 0.85; text-align: center; }
+
+/* Step body */
+.unified-step-body { min-width: 0; }
+.unified-step-header { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; flex-wrap: wrap; }
+.unified-step-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; background: rgba(56,189,248,0.1); color: var(--accent); font-size: 0.95rem; flex-shrink: 0; }
+.unified-step-body h3 { font-size: 1.05rem; font-weight: 700; }
+.unified-step-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 10px; }
+
+/* Competency badge */
+.unified-step-competency { padding: 3px 10px; border-radius: 5px; font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; }
+.unified-step-competency.tag-freight { color: #3B82F6; background: rgba(59,130,246,0.12); }
+.unified-step-competency.tag-supply { color: #38BDF8; background: rgba(56,189,248,0.12); }
+.unified-step-competency.tag-logistics { color: #1D4ED8; background: rgba(29,78,216,0.15); }
+.unified-step-competency.tag-track { color: #60A5FA; background: rgba(96,165,250,0.12); }
+.unified-step-competency.tag-3pl { color: #2563EB; background: rgba(37,99,235,0.12); }
+
+/* Service bullets */
+.unified-step-services { display: flex; flex-wrap: wrap; gap: 6px 16px; }
+.unified-step-services li { display: flex; align-items: center; gap: 6px; font-size: 0.78rem; color: var(--text-secondary); }
+.unified-step-services li i { color: var(--accent); font-size: 0.65rem; }
+
+/* Metric block */
+.unified-step-metric { text-align: center; padding-left: 24px; border-left: 1px solid var(--border); min-width: 100px; }
+.unified-step-metric-num { display: block; font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; background: linear-gradient(135deg, #3B82F6, #38BDF8); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.unified-step-metric-label { display: block; font-size: 0.68rem; color: var(--text-muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.3px; margin-top: 2px; }
+
+/* Automation callout (bottom) */
+.automation-callout { display: flex; align-items: center; gap: 20px; max-width: 900px; margin: 32px auto 0; padding: 24px 28px; background: linear-gradient(135deg, rgba(59,130,246,0.08), rgba(56,189,248,0.05)); border: 1px solid rgba(56,189,248,0.2); border-radius: var(--radius); }
+.automation-callout-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: var(--gradient); color: #fff; font-size: 1.3rem; flex-shrink: 0; box-shadow: 0 4px 14px rgba(59,130,246,0.3); }
+.automation-callout-body strong { display: block; font-family: var(--font-heading); font-size: 0.95rem; font-weight: 700; margin-bottom: 4px; color: var(--accent); }
+.automation-callout-body p { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .unified-step { grid-template-columns: 1fr; gap: 16px; padding: 20px; }
+    .unified-step-num { font-size: 1.8rem; text-align: left; }
+    .unified-step-metric { padding-left: 0; border-left: none; border-top: 1px solid var(--border); padding-top: 16px; text-align: left; display: flex; align-items: baseline; gap: 12px; }
+    .unified-step-metric-num { font-size: 1.5rem; }
+    .automation-callout { flex-direction: column; text-align: center; gap: 12px; padding: 20px; }
+}
