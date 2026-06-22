@@ -1,18 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
   <!-- Connection lines -->
-  <line x1="50" y1="20" x2="20" y2="50" stroke="#00D4FF" stroke-width="1.5" opacity="0.5"/>
-  <line x1="50" y1="20" x2="80" y2="50" stroke="#00D4FF" stroke-width="1.5" opacity="0.5"/>
-  <line x1="20" y1="50" x2="50" y2="80" stroke="#7B2FFC" stroke-width="1.5" opacity="0.5"/>
-  <line x1="80" y1="50" x2="50" y2="80" stroke="#7B2FFC" stroke-width="1.5" opacity="0.5"/>
-  <line x1="20" y1="50" x2="80" y2="50" stroke="#00D4FF" stroke-width="1.5" opacity="0.5"/>
+  <line x1="50" y1="20" x2="20" y2="50" stroke="#38BDF8" stroke-width="1.5" opacity="0.5"/>
+  <line x1="50" y1="20" x2="80" y2="50" stroke="#38BDF8" stroke-width="1.5" opacity="0.5"/>
+  <line x1="20" y1="50" x2="50" y2="80" stroke="#3B82F6" stroke-width="1.5" opacity="0.5"/>
+  <line x1="80" y1="50" x2="50" y2="80" stroke="#3B82F6" stroke-width="1.5" opacity="0.5"/>
+  <line x1="20" y1="50" x2="80" y2="50" stroke="#38BDF8" stroke-width="1.5" opacity="0.5"/>
   
   <!-- Nodes -->
-  <circle class="node" cx="50" cy="20" r="8" fill="#0A0E1A" stroke="#00D4FF" stroke-width="2"/>
-  <circle class="node" cx="20" cy="50" r="8" fill="#0A0E1A" stroke="#7B2FFC" stroke-width="2"/>
-  <circle class="node" cx="80" cy="50" r="8" fill="#0A0E1A" stroke="#7B2FFC" stroke-width="2"/>
-  <circle class="node" cx="50" cy="80" r="8" fill="#0A0E1A" stroke="#00D4FF" stroke-width="2"/>
+  <circle class="node" cx="50" cy="20" r="8" fill="#0A0E1A" stroke="#38BDF8" stroke-width="2"/>
+  <circle class="node" cx="20" cy="50" r="8" fill="#0A0E1A" stroke="#3B82F6" stroke-width="2"/>
+  <circle class="node" cx="80" cy="50" r="8" fill="#0A0E1A" stroke="#3B82F6" stroke-width="2"/>
+  <circle class="node" cx="50" cy="80" r="8" fill="#0A0E1A" stroke="#38BDF8" stroke-width="2"/>
   
   <!-- Center hub -->
-  <circle class="hub" cx="50" cy="50" r="12" fill="#00D4FF" opacity="0.2"/>
-  <circle cx="50" cy="50" r="6" fill="#00D4FF"/>
+  <circle class="hub" cx="50" cy="50" r="12" fill="#38BDF8" opacity="0.2"/>
+  <circle cx="50" cy="50" r="6" fill="#38BDF8"/>
 </svg>

@@ -131,7 +131,7 @@
 
 /* Hover effects */
 .intensive-card:hover .intensive-icon svg {
-    filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.5));
+    filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.5));
 }
 
 /* Reduced motion */
