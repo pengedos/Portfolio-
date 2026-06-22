@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Radar rings -->
+  <circle class="radar-ring" cx="50" cy="50" r="40" stroke="#00D4FF" stroke-width="1" opacity="0.2"/>
+  <circle class="radar-ring" cx="50" cy="50" r="30" stroke="#00D4FF" stroke-width="1" opacity="0.3"/>
+  <circle class="radar-ring" cx="50" cy="50" r="20" stroke="#00D4FF" stroke-width="1" opacity="0.4"/>
+  <circle class="radar-ring" cx="50" cy="50" r="10" stroke="#00D4FF" stroke-width="1" opacity="0.5"/>
+  
+  <!-- Radar sweep -->
+  <path class="radar-sweep" d="M50 50 L50 10 A40 40 0 0 1 85 30 Z" fill="#00D4FF" opacity="0.15"/>
+  
+  <!-- Center dot -->
+  <circle cx="50" cy="50" r="4" fill="#00D4FF"/>
+  
+  <!-- Tracking points -->
+  <circle class="track-point" cx="30" cy="30" r="3" fill="#7B2FFC"/>
+  <circle class="track-point" cx="70" cy="35" r="3" fill="#7B2FFC"/>
+  <circle class="track-point" cx="60" cy="70" r="3" fill="#7B2FFC"/>
+  
+  <!-- Pulse waves from center -->
+  <circle class="pulse-wave" cx="50" cy="50" r="5" stroke="#00D4FF" stroke-width="2" fill="none"/>
+</svg>
