@@ -27,12 +27,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     var header = document.getElementById('header');
-    var stickyLogos = document.getElementById('stickyLogos');
     function updateHeader() {
         header.classList.toggle('scrolled', window.scrollY > 20);
-        if (stickyLogos) {
-            stickyLogos.classList.toggle('visible', window.scrollY > window.innerHeight * 0.5);
-        }
     }
     window.addEventListener('scroll', updateHeader, { passive: true });
     updateHeader();
