@@ -357,9 +357,12 @@ img { max-width: 100%; display: block; }
 
 /* FOOTER */
 .site-footer { padding: 28px 24px; border-top: 1px solid var(--border); text-align: center; }
-.footer-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 10px; }
+.footer-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
 .footer-links a { color: var(--text-muted); font-size: 0.82rem; transition: color 0.2s; }
 .footer-links a:hover { color: var(--accent); }
+.footer-social { display: flex; justify-content: center; gap: 14px; margin-bottom: 16px; }
+.footer-social a { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.04); border: 1px solid var(--border); color: var(--text-muted); font-size: 0.95rem; transition: all 0.25s; }
+.footer-social a:hover { background: var(--accent); color: #fff; border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 4px 12px rgba(56,189,248,0.3); }
 .site-footer p { font-size: 0.75rem; color: var(--text-muted); }
 
 /* LIGHTBOX */
