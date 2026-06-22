@@ -117,77 +117,25 @@ document.addEventListener('DOMContentLoaded', function() {
         }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
         document.querySelectorAll('.fade-in').forEach(function(el) { fadeObserver.observe(el); });
 
-        function animateCounter(element, target, suffix, duration) {
-            var start = 0;
-            var startTime = null;
-            var isDecimal = target % 1 !== 0;
-            
-            function step(timestamp) {
-                if (!startTime) startTime = timestamp;
-                var progress = Math.min((timestamp - startTime) / duration, 1);
-                var easeOut = 1 - Math.pow(1 - progress, 3);
-                var current = start + (target - start) * easeOut;
-                
-                if (isDecimal) {
-                    element.textContent = current.toFixed(1) + suffix;
-                } else {
-                    element.textContent = Math.floor(current) + suffix;
-                }
-                
-                if (progress < 1) {
-                    requestAnimationFrame(step);
-                }
-            }
-            requestAnimationFrame(step);
-        }
-
-        var metricsObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    var metricNumbers = entry.target.querySelectorAll('.hero-metric-number');
-                    metricNumbers.forEach(function(el) {
-                        var text = el.textContent;
-                        var match = text.match(/^([\d.]+)(.*)$/);
-                        if (match) {
-                            var targetNum = parseFloat(match[1]);
-                            var suffix = match[2];
-                            el.textContent = '0' + suffix;
-                            animateCounter(el, targetNum, suffix, 1500);
-                        }
-                    });
-                    metricsObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
         // Hero metrics: show final values immediately (no counter) — avoids "0" flash on load
-        // (Case study metrics below the fold still use the scroll-triggered counter)
+        // Case study metrics use CSS fade-in (see styles.css .case-results)
 
-        // Case study metrics counter
+        // Case study metrics: CSS fade-in on scroll (no counter — avoids "0" bug)
         var caseMetricsObserver = new IntersectionObserver(function(entries) {
             entries.forEach(function(entry) {
                 if (entry.isIntersecting) {
-                    var metricNums = entry.target.querySelectorAll('.case-metric-num');
-                    metricNums.forEach(function(el) {
-                        var text = el.textContent;
-                        var match = text.match(/^([\d.]+)(.*)$/);
-                        if (match) {
-                            var targetNum = parseFloat(match[1]);
-                            var suffix = match[2];
-                            el.textContent = '0' + suffix;
-                            animateCounter(el, targetNum, suffix, 1500);
-                        }
-                    });
+                    entry.target.classList.add('visible');
                     caseMetricsObserver.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.3 });
+        }, { threshold: 0.2 });
 
         document.querySelectorAll('.cases-grid').forEach(function(el) { caseMetricsObserver.observe(el); });
     } else {
         document.querySelectorAll('.fade-in').forEach(function(el) { el.classList.add('visible'); });
         document.querySelectorAll('.stagger-in').forEach(function(el) { el.classList.add('visible'); });
         document.querySelectorAll('.hero-word').forEach(function(el) { el.classList.add('visible'); });
+        document.querySelectorAll('.cases-grid').forEach(function(el) { el.classList.add('visible'); });
     }
 
     // 1. STAGGERED CARD ENTRANCE
