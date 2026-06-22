@@ -92,12 +92,6 @@ img { max-width: 100%; display: block; }
 .nav-link:hover, .nav-link.active { color: var(--text-primary); background: rgba(56,189,248,0.08); }
 .nav-cta-link { background: var(--gradient); color: #fff !important; font-weight: 600; }
 .nav-cta-link:hover { opacity: 0.9; }
-.theme-toggle { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--text-muted); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.25s; font-size: 0.9rem; }
-.theme-toggle:hover { background: rgba(56,189,248,0.1); color: var(--accent); }
-[data-theme="light"] { --bg-primary: #F8F9FE; --bg-alt: #FFFFFF; --bg-card: #FFFFFF; --border: rgba(0,0,0,0.08); --border-hover: rgba(56,189,248,0.25); --text-primary: #1A1A2E; --text-secondary: #374151; --text-muted: #596174; }
-[data-theme="light"] .site-header { background: rgba(248,249,254,0.8); }
-[data-theme="light"] .site-header.scrolled { background: rgba(248,249,254,0.95); box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
-[data-theme="light"] .nav-overlay { background: rgba(0,0,0,0.3); }
 .nav-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 999; opacity: 0; transition: opacity 0.3s; }
 .nav-overlay.active { display: block; opacity: 1; }
 .nav-toggle { display: none; background: none; border: none; color: var(--text-primary); font-size: 1.2rem; cursor: pointer; padding: 8px; transition: transform 0.3s; }
@@ -274,13 +268,6 @@ img { max-width: 100%; display: block; }
     font-weight: 500;
 }
 
-/* Light theme — tiles stay white, softer shadow */
-[data-theme="light"] .platform-tile {
-    background: #ffffff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    border: 1px solid rgba(0,0,0,0.06);
-}
-[data-theme="light"] .platform-tile-caption { color: #475569; }
 
 .carousel-hint {
     text-align: center;
@@ -447,8 +434,6 @@ img { max-width: 100%; display: block; }
 .case-card:hover .case-num { opacity: 0.35; }
 .case-card > *:not(.case-num) { position: relative; z-index: 1; }
 
-[data-theme="light"] .case-num { opacity: 0.25; }
-[data-theme="light"] .case-card:hover .case-num { opacity: 0.45; }
 
 @media (max-width: 768px) {
     .case-filter-btn { padding: 7px 14px; font-size: 0.76rem; }
@@ -462,8 +447,6 @@ img { max-width: 100%; display: block; }
 .section-header h2::after { content: ''; display: block; width: 64px; height: 3px; margin: 12px auto 0; border-radius: 2px; background: linear-gradient(90deg, #3B82F6, #38BDF8, #1D4ED8); }
 
 /* Light theme: hero title stays solid for legibility; underline accent adapts */
-[data-theme="light"] .hero-right h1 { color: var(--text-primary); text-shadow: none; }
-[data-theme="light"] .hero-right h1::after { box-shadow: 0 2px 8px rgba(56,189,248,0.2); }
 
 /* ============================================================
    UNIFIED PROCESS SECTION — merged Intensive Profile + How I Work + Services
@@ -546,13 +529,12 @@ img { max-width: 100%; display: block; }
 .availability-badge { display: inline-flex; align-items: center; gap: 8px; padding: 5px 14px; border-radius: 50px; font-size: 0.74rem; font-weight: 600; color: #4ADE80; background: rgba(74,222,128,0.1); border: 1px solid rgba(74,222,128,0.3); margin-bottom: 14px; }
 .availability-dot { width: 8px; height: 8px; border-radius: 50%; background: #4ADE80; box-shadow: 0 0 0 0 rgba(74,222,128,0.5); animation: availabilityPulse 2s ease-in-out infinite; }
 @keyframes availabilityPulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(74,222,128,0.5); } 50% { box-shadow: 0 0 0 6px rgba(74,222,128,0); } }
-[data-theme="light"] .availability-badge { color: #16A34A; background: rgba(22,163,74,0.08); border-color: rgba(22,163,74,0.25); }
 
 /* ============================================================
    ENHANCED PRINT STYLES (#14) — for resume download
    ============================================================ */
 @media print {
-    .site-header, .back-to-top, .skip-link, .scroll-progress, .nav-toggle, .theme-toggle,
+    .site-header, .back-to-top, .skip-link, .scroll-progress, .nav-toggle,
     .case-filter-bar, .case-filter-count, .carousel-hint, .lightbox,
     .contact-form, .availability-badge, .hero-badge, .hero-pillars,
     .platforms-carousel { display: none !important; }

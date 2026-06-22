@@ -1,30 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     document.documentElement.classList.remove('no-js');
-    
+    document.documentElement.setAttribute('data-theme', 'dark');
+
     var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    // Theme toggle
-    var themeToggle = document.getElementById('themeToggle');
-    var html = document.documentElement;
-    var savedTheme = localStorage.getItem('theme') || 'dark';
-    html.setAttribute('data-theme', savedTheme);
-    updateThemeIcon(savedTheme);
-
-    function updateThemeIcon(theme) {
-        if (themeToggle) {
-            themeToggle.querySelector('i').className = theme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
-        }
-    }
-
-    if (themeToggle) {
-        themeToggle.addEventListener('click', function() {
-            var current = html.getAttribute('data-theme');
-            var next = current === 'dark' ? 'light' : 'dark';
-            html.setAttribute('data-theme', next);
-            localStorage.setItem('theme', next);
-            updateThemeIcon(next);
-        });
-    }
 
     var header = document.getElementById('header');
     function updateHeader() {
