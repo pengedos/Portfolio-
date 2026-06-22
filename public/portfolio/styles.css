@@ -226,7 +226,7 @@ img { max-width: 100%; display: block; }
 /* CASE STUDIES */
 #case-studies .container { max-width: 1200px; }
 .cases-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.case-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; transition: all 0.3s; }
+.case-card { position: relative; overflow: hidden; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; transition: all 0.3s; }
 .case-card:hover { transform: translateY(-4px); border-color: var(--border-hover); box-shadow: 0 12px 32px rgba(0,0,0,0.2); }
 .case-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
 .case-company { font-size: 0.78rem; color: var(--accent); font-weight: 600; }
@@ -402,6 +402,14 @@ img { max-width: 100%; display: block; }
 .case-pillar-tag.tag-leadership { color: var(--accent-gold); background: rgba(245,166,35,0.12); }
 
 .case-card.is-hidden { display: none; }
+
+/* Case study numbering — large tri-gradient watermark in top-right */
+.case-num { position: absolute; top: 10px; right: 18px; font-family: var(--font-heading); font-size: 3.2rem; font-weight: 800; line-height: 1; letter-spacing: -2px; background: linear-gradient(135deg, #FF6B35 0%, #00D4FF 50%, #F5A623 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; opacity: 0.18; pointer-events: none; z-index: 0; transition: opacity 0.3s; }
+.case-card:hover .case-num { opacity: 0.35; }
+.case-card > *:not(.case-num) { position: relative; z-index: 1; }
+
+[data-theme="light"] .case-num { opacity: 0.25; }
+[data-theme="light"] .case-card:hover .case-num { opacity: 0.45; }
 
 @media (max-width: 768px) {
     .case-filter-btn { padding: 7px 14px; font-size: 0.76rem; }
