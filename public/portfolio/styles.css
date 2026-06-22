@@ -253,14 +253,14 @@ img { max-width: 100%; display: block; }
 }
 .platform-tile-img {
     width: 100%;
-    height: 80px;
+    height: 90px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 12px;
 }
 .platform-tile-img img {
-    max-height: 70px;
+    max-height: 80px;
     max-width: 120px;
     width: auto;
     height: auto;
@@ -294,8 +294,8 @@ img { max-width: 100%; display: block; }
 
 @media (max-width: 768px) {
     .platform-tile { width: 130px; padding: 16px 10px; }
-    .platform-tile-img { height: 70px; }
-    .platform-tile-img img { max-height: 58px; max-width: 100px; }
+    .platform-tile-img { height: 80px; }
+    .platform-tile-img img { max-height: 65px; max-width: 100px; }
     .platform-tile-caption { font-size: 0.66rem; }
     .tool-psr-row { grid-template-columns: 60px 1fr; gap: 10px; }
 }
