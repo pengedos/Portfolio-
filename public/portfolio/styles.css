@@ -429,16 +429,8 @@ img { max-width: 100%; display: block; }
 .pillar-lead { color: var(--accent-gold); border-color: rgba(29,78,216,0.35); background: rgba(29,78,216,0.08); box-shadow: 0 4px 12px rgba(29,78,216,0.12); }
 
 /* ============================================================
-   CASE STUDY FILTER — filterable case studies (6.1)
+   CASE STUDY PILLAR BADGES — category tags on each card
    ============================================================ */
-.case-filter-bar { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 14px; }
-.case-filter-btn { padding: 8px 18px; border-radius: 50px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text-muted); font-size: 0.82rem; font-weight: 600; cursor: pointer; transition: all 0.25s; font-family: var(--font-body); }
-.case-filter-btn:hover { color: var(--text-primary); border-color: var(--border-hover); transform: translateY(-1px); }
-.case-filter-btn.active { background: var(--gradient); color: #fff; border-color: transparent; box-shadow: 0 4px 14px rgba(56,189,248,0.3); }
-.case-filter-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-
-.case-filter-count { text-align: center; font-size: 0.78rem; color: var(--text-muted); margin-bottom: 28px; }
-
 .case-pillar-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
 .case-pillar-tag { padding: 3px 9px; border-radius: 5px; font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; }
 .case-pillar-tag.tag-ops { color: var(--accent-freight); background: rgba(59,130,246,0.12); }
