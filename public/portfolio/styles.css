@@ -11,7 +11,7 @@
     --accent-purple: #7B2FFC;
     --accent-gold: #F5A623;
     --accent-freight: #FF6B35;
-    --gradient: linear-gradient(135deg, #00D4FF, #7B2FFC);
+    --gradient: linear-gradient(135deg, #FF6B35 0%, #00D4FF 50%, #F5A623 100%);
     --gradient-freight: linear-gradient(135deg, #FF6B35, #F5A623);
     --font-body: 'Inter', sans-serif;
     --font-heading: 'Montserrat', sans-serif;
@@ -122,7 +122,7 @@ img { max-width: 100%; display: block; }
     .nav-link:hover { background: rgba(0,212,255,0.1); }
     .nav-toggle { display: flex; align-items: center; justify-content: center; }
     .nav-cta-link { margin-top: 16px; text-align: center; }
-    .nav-cta-link:hover { background: linear-gradient(135deg, #00D4FF, #7B2FFC); }
+    .nav-cta-link:hover { background: var(--gradient); }
 }
 
 /* HERO */
@@ -132,12 +132,12 @@ img { max-width: 100%; display: block; }
 .hero-grid { display: grid; grid-template-columns: 25fr 75fr; gap: 40px; align-items: center; max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
 .hero-left { display: flex; flex-direction: column; align-items: center; justify-content: center; }
 .hero-photo { position: relative; }
-.hero-portrait { width: 300px; height: 380px; object-fit: cover; object-position: top center; border-radius: 16px; box-shadow: 0 20px 50px rgba(0,0,0,0.4); transition: transform 0.3s; display: block; animation: portraitFloat 4s ease-in-out infinite; }
+.hero-portrait { width: 300px; height: 380px; object-fit: cover; object-position: top center; border-radius: 16px; box-shadow: 0 20px 50px rgba(0,0,0,0.4), 0 0 30px rgba(255,107,53,0.15), 0 0 60px rgba(0,212,255,0.15), 0 0 90px rgba(245,166,35,0.10); transition: transform 0.3s; display: block; animation: portraitFloat 4s ease-in-out infinite; }
 @keyframes portraitFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
 .hero-portrait:hover { animation: none; transform: scale(1.02); }
 .hero-right { display: flex; flex-direction: column; align-items: flex-start; text-align: left; padding-right: 40px; text-shadow: 0 2px 8px rgba(0,0,0,0.4); }
-.hero-badge { display: inline-block; background: linear-gradient(135deg, rgba(255,107,53,0.15), rgba(0,212,255,0.15)); border: 1px solid rgba(255,107,53,0.3); padding: 6px 16px; border-radius: 50px; font-size: 0.8rem; color: var(--accent-freight); font-weight: 500; margin-bottom: 12px; box-shadow: 0 4px 12px rgba(255,107,53,0.2); }
-.hero-right h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.1; margin-bottom: 14px; letter-spacing: -1.5px; color: #FFFFFF; text-shadow: 0 2px 12px rgba(0,0,0,0.6), 0 0 30px rgba(0,212,255,0.4); }
+.hero-badge { display: inline-block; background: linear-gradient(135deg, rgba(255,107,53,0.15), rgba(0,212,255,0.15), rgba(245,166,35,0.15)); border: 1px solid rgba(255,107,53,0.3); padding: 6px 16px; border-radius: 50px; font-size: 0.8rem; color: var(--accent-freight); font-weight: 500; margin-bottom: 12px; box-shadow: 0 4px 12px rgba(255,107,53,0.2); }
+.hero-right h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.1; margin-bottom: 14px; letter-spacing: -1.5px; background: linear-gradient(135deg, #FF6B35 0%, #00D4FF 50%, #F5A623 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: #FFFFFF; filter: drop-shadow(0 2px 12px rgba(0,0,0,0.6)) drop-shadow(0 0 24px rgba(0,212,255,0.25)); }
 .hero-subtitle { font-size: 0.95rem; color: #FFFFFF; max-width: 100%; margin: 0 0 20px 0; line-height: 1.6; text-shadow: 0 1px 6px rgba(0,0,0,0.4); }
 .hero-metrics-inline { display: flex; align-items: center; gap: 0; margin-bottom: 24px; padding: 16px 28px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius); }
 .hero-metric-number { display: block; font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; color: #FFFFFF; -webkit-text-fill-color: #FFFFFF; }
@@ -257,10 +257,10 @@ img { max-width: 100%; display: block; }
 .timeline { max-width: 700px; margin: 0 auto; }
 .timeline-item { position: relative; padding-left: 36px; padding-bottom: 28px; }
 .timeline-item:last-child { padding-bottom: 0; }
-.timeline-dot { position: absolute; left: 0; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); border: 3px solid var(--bg-primary); }
-.timeline-item:nth-child(2) .timeline-dot { background: var(--accent-purple); }
-.timeline-item:nth-child(3) .timeline-dot { background: var(--accent-gold); }
-.timeline-item:nth-child(4) .timeline-dot { background: #22C55E; }
+.timeline-dot { position: absolute; left: 0; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--accent-freight); border: 3px solid var(--bg-primary); }
+.timeline-item:nth-child(2) .timeline-dot { background: var(--accent-gold); }
+.timeline-item:nth-child(3) .timeline-dot { background: var(--accent); }
+.timeline-item:nth-child(4) .timeline-dot { background: linear-gradient(135deg, #FF6B35, #00D4FF, #F5A623); }
 .timeline-content { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; transition: all 0.3s; }
 .timeline-content:hover { border-color: var(--border-hover); }
 .timeline-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; flex-wrap: wrap; gap: 8px; }
@@ -407,3 +407,12 @@ img { max-width: 100%; display: block; }
     .case-filter-btn { padding: 7px 14px; font-size: 0.76rem; }
     .hero-pillar { font-size: 0.72rem; padding: 7px 12px; }
 }
+
+/* ============================================================
+   COLOR BLEND — tri-gradient accent across all sections
+   Blends the 3 pillar colors: Ops (#FF6B35) → Tech (#00D4FF) → Leadership (#F5A623)
+   ============================================================ */
+.section-header h2::after { content: ''; display: block; width: 64px; height: 3px; margin: 12px auto 0; border-radius: 2px; background: linear-gradient(90deg, #FF6B35, #00D4FF, #F5A623); }
+
+/* Light theme: gradient hero title loses legibility on white, revert to solid */
+[data-theme="light"] .hero-right h1 { background: none; -webkit-text-fill-color: initial; color: var(--text-primary); filter: none; }
