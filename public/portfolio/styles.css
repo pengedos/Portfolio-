@@ -372,3 +372,38 @@ img { max-width: 100%; display: block; }
     body { background: #fff; color: #000; }
     .hero-metrics, .hero-actions, .hero-trust { display: none; }
 }
+
+/* ============================================================
+   HERO PILLARS — 3-pillar identity strip (1.4)
+   ============================================================ */
+.hero-pillars { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0 22px; }
+.hero-pillar { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 50px; font-size: 0.78rem; font-weight: 600; border: 1px solid var(--border); background: rgba(255,255,255,0.03); transition: transform 0.25s, box-shadow 0.25s; }
+.hero-pillar i { font-size: 0.85rem; }
+.hero-pillar:hover { transform: translateY(-2px); }
+.pillar-ops { color: var(--accent-freight); border-color: rgba(255,107,53,0.35); background: rgba(255,107,53,0.08); box-shadow: 0 4px 12px rgba(255,107,53,0.12); }
+.pillar-tech { color: var(--accent); border-color: rgba(0,212,255,0.35); background: rgba(0,212,255,0.08); box-shadow: 0 4px 12px rgba(0,212,255,0.12); }
+.pillar-lead { color: var(--accent-gold); border-color: rgba(245,166,35,0.35); background: rgba(245,166,35,0.08); box-shadow: 0 4px 12px rgba(245,166,35,0.12); }
+
+/* ============================================================
+   CASE STUDY FILTER — filterable case studies (6.1)
+   ============================================================ */
+.case-filter-bar { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 14px; }
+.case-filter-btn { padding: 8px 18px; border-radius: 50px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text-muted); font-size: 0.82rem; font-weight: 600; cursor: pointer; transition: all 0.25s; font-family: var(--font-body); }
+.case-filter-btn:hover { color: var(--text-primary); border-color: var(--border-hover); transform: translateY(-1px); }
+.case-filter-btn.active { background: var(--gradient); color: #fff; border-color: transparent; box-shadow: 0 4px 14px rgba(0,212,255,0.3); }
+.case-filter-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.case-filter-count { text-align: center; font-size: 0.78rem; color: var(--text-muted); margin-bottom: 28px; }
+
+.case-pillar-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.case-pillar-tag { padding: 3px 9px; border-radius: 5px; font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; }
+.case-pillar-tag.tag-ops { color: var(--accent-freight); background: rgba(255,107,53,0.12); }
+.case-pillar-tag.tag-tech { color: var(--accent); background: rgba(0,212,255,0.12); }
+.case-pillar-tag.tag-leadership { color: var(--accent-gold); background: rgba(245,166,35,0.12); }
+
+.case-card.is-hidden { display: none; }
+
+@media (max-width: 768px) {
+    .case-filter-btn { padding: 7px 14px; font-size: 0.76rem; }
+    .hero-pillar { font-size: 0.72rem; padding: 7px 12px; }
+}

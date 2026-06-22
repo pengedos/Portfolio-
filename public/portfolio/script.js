@@ -432,4 +432,42 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // ===== Case Study Filter (6.1) =====
+    var filterBtns = document.querySelectorAll('.case-filter-btn');
+    var caseCards = document.querySelectorAll('.case-card');
+    var filterCount = document.querySelector('.case-filter-count');
+    var totalCases = caseCards.length;
+
+    filterBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            // Update active state on all buttons
+            filterBtns.forEach(function(b) {
+                b.classList.remove('active');
+                b.setAttribute('aria-selected', 'false');
+            });
+            btn.classList.add('active');
+            btn.setAttribute('aria-selected', 'true');
+
+            // Filter cards by data-tags
+            var filter = btn.getAttribute('data-filter');
+            var visibleCount = 0;
+            caseCards.forEach(function(card) {
+                var tags = (card.getAttribute('data-tags') || '').split(' ');
+                var show = (filter === 'all' || tags.indexOf(filter) !== -1);
+                if (show) {
+                    card.classList.remove('is-hidden');
+                    visibleCount++;
+                } else {
+                    card.classList.add('is-hidden');
+                }
+            });
+
+            // Update live count text
+            if (filterCount) {
+                var label = filter === 'all' ? 'all areas' : btn.textContent.trim();
+                filterCount.textContent = 'Showing ' + visibleCount + ' of ' + totalCases + ' case studies in ' + label;
+            }
+        });
+    });
+
 });
