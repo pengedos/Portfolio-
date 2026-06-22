@@ -160,8 +160,8 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }, { threshold: 0.5 });
 
-        var heroMetrics = document.querySelector('.hero-metrics-inline');
-        if (heroMetrics) metricsObserver.observe(heroMetrics);
+        // Hero metrics: show final values immediately (no counter) — avoids "0" flash on load
+        // (Case study metrics below the fold still use the scroll-triggered counter)
 
         // Case study metrics counter
         var caseMetricsObserver = new IntersectionObserver(function(entries) {
