@@ -382,4 +382,72 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // ===== Scroll Progress Indicator (#11) =====
+    var scrollProgress = document.getElementById('scrollProgress');
+    if (scrollProgress) {
+        function updateScrollProgress() {
+            var scrollTop = window.scrollY;
+            var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            var percent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            scrollProgress.style.width = percent + '%';
+        }
+        window.addEventListener('scroll', updateScrollProgress, { passive: true });
+        updateScrollProgress();
+    }
+
+    // ===== Privacy-friendly analytics (#17) — localStorage page views =====
+    try {
+        var today = new Date().toISOString().split('T')[0];
+        var stats = JSON.parse(localStorage.getItem('visitStats') || '{"firstVisit":"' + today + '","totalVisits":0,"lastVisit":"","visitDays":[]}');
+        if (stats.lastVisit !== today) {
+            stats.totalVisits = (stats.totalVisits || 0) + 1;
+            stats.lastVisit = today;
+            if (stats.visitDays.indexOf(today) === -1) {
+                stats.visitDays.push(today);
+                if (stats.visitDays.length > 30) stats.visitDays = stats.visitDays.slice(-30);
+            }
+            localStorage.setItem('visitStats', JSON.stringify(stats));
+        }
+        console.log('Visit stats: ' + stats.totalVisits + ' total visits across ' + stats.visitDays.length + ' days (since ' + stats.firstVisit + ')');
+    } catch(e) { /* localStorage not available */ }
+
+    // ===== Hover sound toggle (#13) — off by default, user can enable =====
+    var soundEnabled = localStorage.getItem('hoverSound') === 'true';
+    var soundToggle = document.createElement('button');
+    soundToggle.className = 'sound-toggle';
+    soundToggle.setAttribute('aria-label', 'Toggle hover sounds');
+    soundToggle.innerHTML = '<i class="fas ' + (soundEnabled ? 'fa-volume-up' : 'fa-volume-mute') + '"></i>';
+    soundToggle.style.cssText = 'position:fixed;bottom:24px;left:24px;width:40px;height:40px;border-radius:10px;background:rgba(10,14,26,0.8);border:1px solid rgba(56,189,248,0.3);color:var(--accent);cursor:pointer;z-index:100;display:flex;align-items:center;justify-content:center;font-size:0.85rem;backdrop-filter:blur(8px);transition:all 0.25s;';
+    soundToggle.title = soundEnabled ? 'Hover sounds ON — click to mute' : 'Hover sounds OFF — click to enable';
+    document.body.appendChild(soundToggle);
+
+    var audioCtx = null;
+    function playHoverSound() {
+        if (!soundEnabled) return;
+        try {
+            if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            var osc = audioCtx.createOscillator();
+            var gain = audioCtx.createGain();
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.frequency.value = 880;
+            osc.type = 'sine';
+            gain.gain.setValueAtTime(0.03, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.08);
+            osc.start(audioCtx.currentTime);
+            osc.stop(audioCtx.currentTime + 0.08);
+        } catch(e) {}
+    }
+
+    soundToggle.addEventListener('click', function() {
+        soundEnabled = !soundEnabled;
+        localStorage.setItem('hoverSound', soundEnabled);
+        soundToggle.innerHTML = '<i class="fas ' + (soundEnabled ? 'fa-volume-up' : 'fa-volume-mute') + '"></i>';
+        soundToggle.title = soundEnabled ? 'Hover sounds ON — click to mute' : 'Hover sounds OFF — click to enable';
+    });
+
+    document.querySelectorAll('a, button, .case-card, .tool-gallery-card, .platform-tile, .dev-cert').forEach(function(el) {
+        el.addEventListener('mouseenter', playHoverSound);
+    });
+
 });
